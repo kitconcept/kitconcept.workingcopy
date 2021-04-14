@@ -5,7 +5,7 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-PROJECTNAME = 'kitconcept.workingcopy'
+PROJECTNAME = "kitconcept.workingcopy"
 _ = MessageFactory(PROJECTNAME)
 logger = logging.getLogger(PROJECTNAME)
 config = {}

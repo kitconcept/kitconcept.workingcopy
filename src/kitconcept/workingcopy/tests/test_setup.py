@@ -20,30 +20,26 @@ class TestSetup(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
+        self.portal = self.layer["portal"]
         if HAS_INSTALLER:
             self.installer = get_installer(self.portal)
         else:
-            self.installer = api.portal.get_tool('portal_quickinstaller')
+            self.installer = api.portal.get_tool("portal_quickinstaller")
 
     def test_product_installed(self):
         """Test if kitconcept.workingcopy is installed."""
         if HAS_INSTALLER:
             self.assertTrue(
-                self.installer.is_product_installed('kitconcept.workingcopy')
+                self.installer.is_product_installed("kitconcept.workingcopy")
             )
         else:
-            self.assertTrue(
-                self.installer.isProductInstalled(
-                    'kitconcept.workingcopy'
-                )
-            )
+            self.assertTrue(self.installer.isProductInstalled("kitconcept.workingcopy"))
 
     def test_browserlayer(self):
         """Test that IWorkingcopyCoreLayer is registered."""
-        from kitconcept.workingcopy.interfaces import (
-            IWorkingcopyCoreLayer)
+        from kitconcept.workingcopy.interfaces import IWorkingcopyCoreLayer
         from plone.browserlayer import utils
+
         self.assertIn(IWorkingcopyCoreLayer, utils.registered_layers())
 
 
@@ -52,29 +48,28 @@ class TestUninstall(unittest.TestCase):
     layer = WORKINGCOPY_CORE_INTEGRATION_TESTING
 
     def setUp(self):
-        self.portal = self.layer['portal']
+        self.portal = self.layer["portal"]
         if HAS_INSTALLER:
             self.installer = get_installer(self.portal)
-            self.installer.uninstall_product('kitconcept.workingcopy')
+            self.installer.uninstall_product("kitconcept.workingcopy")
         else:
-            self.installer = api.portal.get_tool('portal_quickinstaller')
-            self.installer.uninstallProducts(['kitconcept.workingcopy'])
+            self.installer = api.portal.get_tool("portal_quickinstaller")
+            self.installer.uninstallProducts(["kitconcept.workingcopy"])
 
     def test_product_uninstalled(self):
         """Test if kitconcept.workingcopy is cleanly uninstalled."""
         if HAS_INSTALLER:
             self.assertFalse(
-                self.installer.is_product_installed('kitconcept.workingcopy')
+                self.installer.is_product_installed("kitconcept.workingcopy")
             )
         else:
             self.assertFalse(
-                self.installer.isProductInstalled(
-                    'kitconcept.workingcopy'
-                )
+                self.installer.isProductInstalled("kitconcept.workingcopy")
             )
 
     def test_browserlayer_removed(self):
         """Test that IWorkingcopyCoreLayer is removed."""
         from kitconcept.workingcopy.interfaces import IWorkingcopyCoreLayer
         from plone.browserlayer import utils
+
         self.assertNotIn(IWorkingcopyCoreLayer, utils.registered_layers())
