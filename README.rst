@@ -19,7 +19,7 @@ Development
 
 Requirements:
 
-- Python 2.7
+- Python 3.8
 - Virtualenv
 
 Setup::
