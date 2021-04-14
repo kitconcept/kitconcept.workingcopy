@@ -24,7 +24,7 @@ class IWorkingCopy(model.Schema):
     model.fieldset(
         "working_copy",
         label=_(u"Working Copy"),
-        fields=["working_copy_blocks", "working_copy_blocks_layout"]
+        fields=["working_copy_blocks", "working_copy_blocks_layout"],
     )
 
     working_copy_blocks = JSONField(
