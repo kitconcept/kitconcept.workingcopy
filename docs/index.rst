@@ -1,0 +1,5 @@
+====================
+kitconcept.workingcopy
+====================
+
+User documentation
