@@ -11,8 +11,9 @@ kitconcept.workingcopy
    :target: https://kitconcept.com/
 
 
-.. image:: https://secure.travis-ci.org/collective/kitconcept.workingcopy.png
-    :target: http://travis-ci.org/collective/kitconcept.workingcopy
+.. image:: https://github.com/kitconcept/kitconcept.workingcopy/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/kitconcept/kitconcept.workingcopy/actions/workflows/ci.yml
+
 
 Development
 -----------
@@ -20,7 +21,6 @@ Development
 Requirements:
 
 - Python 3.8
-- Virtualenv
 
 Setup::
 
