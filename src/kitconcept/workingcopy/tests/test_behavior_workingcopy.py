@@ -4,7 +4,7 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.dexterity.fti import DexterityFTI
-from plone.restapi.behaviors import IBlocks
+from kitconcept.workingcopy.behaviors.workingcopy import IWorkingCopy
 from kitconcept.workingcopy.testing import WORKINGCOPY_CORE_INTEGRATION_TESTING  # noqa
 
 import unittest
@@ -44,4 +44,4 @@ class TestWorkingCopyBlocksBehavior(unittest.TestCase):
             "blocksfolder", id="blocksfolder", title=u"Folder with blocks"
         )
 
-        assert IBlocks.providedBy(self.portal["blocksfolder"])
+        assert IWorkingCopy.providedBy(self.portal["blocksfolder"])

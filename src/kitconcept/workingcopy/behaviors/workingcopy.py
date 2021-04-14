@@ -19,14 +19,14 @@ WORKING_COPY_LAYOUT_SCHEMA = json.dumps(
 
 
 @provider(IFormFieldProvider)
-class IWorkingCopyBlocks(model.Schema):
+class IWorkingCopy(model.Schema):
 
-    model.fieldset("layout", label=_(u"Layout"), fields=["blocks", "blocks_layout"])
+    model.fieldset("working_copy", label=_(u"Working Copy"), fields=["working_copy_blocks", "working_copy_blocks_layout"])
 
     working_copy_blocks = JSONField(
         title=u"Blocks",
         description=u"The JSON representation of the object blocks information. Must be a JSON object.",  # noqa
-        schema=BLOCKS_SCHEMA,
+        schema=WORKING_COPY_BLOCKS_SCHEMA,
         default={},
         required=False,
     )
@@ -34,7 +34,7 @@ class IWorkingCopyBlocks(model.Schema):
     working_copy_blocks_layout = JSONField(
         title=u"Blocks Layout",
         description=u"The JSON representation of the object blocks layout. Must be a JSON array.",  # noqa
-        schema=LAYOUT_SCHEMA,
+        schema=WORKING_COPY_LAYOUT_SCHEMA,
         default={"items": []},
         required=False,
     )

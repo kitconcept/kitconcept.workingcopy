@@ -10,7 +10,7 @@
       name="kitconcept.workingcopy.WorkingCopy"
       title="WorkingCopy"
       description="WorkingCopy information for images"
-      provides=".WorkingCopy.IWorkingCopy"
+      provides=".workingcopy.IWorkingCopy"
       for="plone.dexterity.interfaces.IDexterityContent"
     />
 
