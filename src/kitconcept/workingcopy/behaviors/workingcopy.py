@@ -28,16 +28,16 @@ class IWorkingCopy(model.Schema):
     )
 
     working_copy_blocks = JSONField(
-        title=u"Blocks",
-        description=u"The JSON representation of the object blocks information. Must be a JSON object.",  # noqa
+        title=u"Working Copy Blocks",
+        description=u"The working copy JSON representation of the object blocks information. Must be a JSON object.",  # noqa
         schema=WORKING_COPY_BLOCKS_SCHEMA,
         default={},
         required=False,
     )
 
     working_copy_blocks_layout = JSONField(
-        title=u"Blocks Layout",
-        description=u"The JSON representation of the object blocks layout. Must be a JSON array.",  # noqa
+        title=u"Working Copy Blocks Layout",
+        description=u"The working copy JSON representation of the object blocks layout. Must be a JSON array.",  # noqa
         schema=WORKING_COPY_LAYOUT_SCHEMA,
         default={"items": []},
         required=False,
