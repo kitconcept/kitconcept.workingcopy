@@ -50,7 +50,7 @@ jobs:
 
       # black
       - name: black
-        run: black src/ --check
+        run: black src/ setup.py --check
 
       # code analysis
       - name: code analysis
