@@ -14,6 +14,30 @@ kitconcept.workingcopy
 .. image:: https://github.com/kitconcept/kitconcept.workingcopy/actions/workflows/ci.yml/badge.svg
     :target: https://github.com/kitconcept/kitconcept.workingcopy/actions/workflows/ci.yml
 
+Installation
+------------
+
+Install kitconcept.workingcopy by adding it to your buildout:
+
+```
+[buildout]
+
+...
+
+eggs =
+    ...
+    kitconcept.workingcopy
+```
+
+and then running bin/buildout
+
+
+Contribute
+----------
+
+Issue Tracker: https://github.com/kitconcept/kitconcept.workingcopy/issues
+Source Code: https://github.com/kitconcept/kitconcept.workingcopy
+
 
 Development
 -----------
@@ -21,6 +45,8 @@ Development
 Requirements:
 
 - Python 3.8
+- Plone 5.2
+- Volto
 
 Setup::
 
